@@ -16,7 +16,6 @@ const options = {
 function generate(ast) {
   let generated = astringGenerate(ast.program, {
     generator,
-    // @ts-ignore
     expressionsPrecedence,
     comments: true,
     sourceMap: null,
@@ -31,7 +30,6 @@ describe("astring babel generator", () => {
         path.join(FIXTURES_FOLDER, filename),
         "utf8"
       );
-      // @ts-ignore
       const ast = babelParse(code, options);
       let content = generate(ast);
       if (filename === "valid-only.js") {

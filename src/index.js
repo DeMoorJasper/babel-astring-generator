@@ -1,4 +1,4 @@
-import { GENERATOR, EXPRESSIONS_PRECEDENCE, Generator } from "astring";
+import { GENERATOR, EXPRESSIONS_PRECEDENCE } from "astring";
 
 export const expressionsPrecedence = {
   ...EXPRESSIONS_PRECEDENCE,
@@ -183,7 +183,6 @@ export const generator = {
     state.write(";");
   },
   PrivateName(node, state) {
-    // @ts-ignore
     state.write("#" + node.name, node);
   },
   Import(node, state) {
@@ -271,7 +270,6 @@ export const generator = {
 // TODO: contribute to astring.
 for (let key in generator) {
   let orig = generator[key];
-  // @ts-ignore
   generator[key] = function (node, state, skipComments) {
     // These are printed by astring itself
     if (node.trailingComments) {

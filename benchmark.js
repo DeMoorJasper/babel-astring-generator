@@ -17,7 +17,6 @@ b.suite(
     const ast = parse(FILE_CONTENT);
     astring.generate(ast.program, {
       generator,
-      // @ts-ignore
       expressionsPrecedence,
       comments: true,
       sourceMap: null,
