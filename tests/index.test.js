@@ -13,7 +13,7 @@ const options = {
   sourceType: "module",
 };
 
-function generate(ast: any): string {
+function generate(ast) {
   let generated = astringGenerate(ast.program, {
     generator,
     // @ts-ignore

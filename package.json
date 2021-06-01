@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "babel src --out-dir lib",
-    "test": "mocha -r @babel/register 'tests/**/*.test.ts'",
+    "test": "mocha -r @babel/register 'tests/**/*.test.js'",
     "benchmark": "yarn build && node ./benchmark",
     "prepublishOnly": "yarn build"
   },
