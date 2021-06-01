@@ -2,9 +2,10 @@
   "name": "babel-astring-generator",
   "version": "1.0.0",
   "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir lib",
+    "build": "node ./scripts/build.js",
     "test": "mocha -r @babel/register 'tests/**/*.test.js'",
     "benchmark": "yarn build && node ./benchmark",
     "prepublishOnly": "yarn build"
@@ -23,10 +24,13 @@
     "@babel/parser": "^7.14.4",
     "@babel/preset-env": "^7.14.4",
     "@babel/register": "^7.13.16",
+    "@rollup/plugin-babel": "^5.3.0",
     "@types/estree": "^0.0.47",
     "@types/mocha": "^8.2.2",
     "@types/node": "^15.6.1",
     "benny": "^3.6.15",
-    "mocha": "^8.4.0"
+    "fs-extra": "^10.0.0",
+    "mocha": "^8.4.0",
+    "rollup": "^2.50.5"
   }
 }
